@@ -2,7 +2,7 @@ import openai
 import gradio
 
 openai.api_key = '###'
-messages = [{ "role" : "system", "content" : "You are an assistant creating CV summary and writing cover letters to the expectations contained in the job offer. You want your customized CV summary to highlight the candidate's skills required for a given position. You want the candidate to seem like the perfect candidate for the job. You will receive a job offer and a CV, return CV summary and cover letter. Returned CV summary should be specific and consist of 2 sentences. Respond in a pattern: CV SUMMARY: '''generated cv summary'' COVER LETTER: '''generated cover letter'''."}]
+messages = [{ "role" : "system", "content" : "You are an assistant creating CV summary and writing cover letters to the expectations contained in the job offer. You want your customized CV summary to highlight the candidate's skills required for a given position. You want the candidate to seem like the perfect candidate for the job. Remember to highlight the candidate's experience that may be valuable in the new job. You will receive a job offer and a CV, return CV summary and cover letter. Returned CV summary should be specific and consist of 2 sentences. Respond in a pattern: CV SUMMARY: '''generated cv summary'' COVER LETTER: '''generated cover letter'''."}]
 
 def recruitmentAssistant(cv, job_offer):
     message = f"Create CV summary and generate cover letter. Job offer: {job_offer} CV: {cv}" 
